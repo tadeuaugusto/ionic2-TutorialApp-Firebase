@@ -1,0 +1,83 @@
+
+<!--
+<ion-menu [content]="nav">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item icon-left (click)="onLoad(rootPage)">
+                <ion-icon name="book"></ion-icon>Novidades</button>
+        </ion-list>
+        <ion-list>
+            <button ion-item icon-left (click)="onLoad(signinPage)">
+                <ion-icon name="log-in"></ion-icon>Minhas Musicas</button>
+        </ion-list>
+        <ion-list>
+            <button ion-item icon-left>
+                <ion-icon name="person"></ion-icon>Minha Conta</button>
+        </ion-list>
+        <ion-list>
+            <button ion-item icon-left (click)="onLoad(signupPage)">
+                <ion-icon name="person"></ion-icon>Sobre</button>
+        </ion-list>
+        <ion-list>
+            <button ion-item icon-left (click)="onLogout()">
+            <ion-icon name="log-out"></ion-icon>Sair</button>
+        </ion-list>
+    
+        <ion-list>
+          <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+            {{p.title}}
+          </button>
+        </ion-list>
+
+    </ion-content>
+</ion-menu>
+-->
+
+<ion-menu [content]="nav">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>
+
+
+
+<!--
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+-->

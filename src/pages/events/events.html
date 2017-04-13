@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>  
+        </button>
+      </ion-buttons>
+    <ion-title>EventList</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let event of eventList" (click)="goToEventDetail(event.id)">
+      <h2>{{event?.name}}</h2>
+      <p>Ticket: <strong>${{event?.price}}</strong></p>
+      <p>Date: <strong>{{event?.date}}</strong></p>
+    </ion-item>
+  </ion-list>
+    
+  <!-- Add fab button -->
+    <ion-fab right bottom>
+        <button ion-fab (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>

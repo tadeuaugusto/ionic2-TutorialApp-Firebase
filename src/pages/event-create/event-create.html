@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Evento</ion-label>
+    <ion-input [(ngModel)]="eventName" type="text" placeholder="Qual o nome do evento?"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Preço por Pessoa</ion-label>
+    <ion-input [(ngModel)]="eventPrice" type="number" placeholder="Quanto será cobrado?"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Custo</ion-label>
+    <ion-input [(ngModel)]="eventCost" type="number" placeholder="Quanto você pagaria?"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="eventDate"></ion-datetime>
+  </ion-item>
+
+  <button ion-button block (click)="createEvent(eventName, eventDate, eventPrice, eventCost)">
+    Criar Evento
+  </button>
+</ion-content>

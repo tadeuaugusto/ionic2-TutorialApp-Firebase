@@ -1,0 +1,51 @@
+<ion-header>
+    <!--
+    <ion-navbar>
+        
+        <ion-title>Company Docs</ion-title>
+        
+    </ion-navbar>
+    -->
+</ion-header>
+
+
+<ion-content class="login-content" padding>
+    
+    <img src="http://placehold.it/300x100">
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input #email formControlName="email" type="email" placeholder="digite o seu email" 
+            [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty">
+            </ion-input>
+        </ion-item>
+        <ion-item class="error-message" 
+          *ngIf="!loginForm.controls.email.valid  && loginForm.controls.email.dirty">
+          <p>Por favor entre com um e-mail válido.</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Senha</ion-label>
+          <ion-input #password formControlName="password" type="password" placeholder="digite a sua senha" 
+            [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
+            </ion-input>
+        </ion-item>
+        <ion-item class="error-message" 
+          *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
+          <p>Sua senha deve conter no minimo 6 caracteres.</p>
+        </ion-item>
+
+        <button ion-button block type="submit">
+          Entrar
+        </button>
+        <button ion-button block type="button" (click)="openSignupPage()">Cadastrar</button>
+                
+        
+        <button ion-button block clear (click)="goToResetPassword()">
+            I forgot my password
+        </button>
+
+</form>
+
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Cadastrar</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content class="login-content" padding>
+
+  <img src="http://placehold.it/300x100">
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input #email formControlName="username" type="text" placeholder="digite o seu nome" 
+        [class.invalid]="!signupForm.controls.username.valid && signupForm.controls.username.dirty">
+        </ion-input>
+    </ion-item>
+    <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.username.valid  && signupForm.controls.username.dirty">
+          <p>O nome deve conter no minimo 3 caracteres.</p>
+    </ion-item>
+      
+      <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input #email formControlName="email" type="email" placeholder="digite o seu email" 
+        [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty">
+        </ion-input>
+    </ion-item>
+    <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+          <p>Por favor entre com um e-mail válido.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input #password formControlName="password" type="password" placeholder="digite a sua senha" 
+        [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty">
+        </ion-input>
+    </ion-item>
+    <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+          <p>Sua senha deve conter no minimo 6 caracteres.</p>
+    </ion-item>
+
+    <button ion-button block type="submit">
+      Criar Conta
+    </button>
+  </form> 
+    
+</ion-content>
